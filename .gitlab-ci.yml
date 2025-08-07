@@ -1,0 +1,31 @@
+stages:
+  - build
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - frontend/node_modules/
+    - backend/.gradle/
+
+frontend-build:
+  stage: build
+  image: node:20-alpine
+  before_script:
+    - cd frontend
+    - npm install
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - frontend/.next/
+
+backend-build:
+  stage: build
+  image: gradle:8.7-jdk17
+  before_script:
+    - cd backend
+  script:
+    - ./gradlew build --no-daemon
+  artifacts:
+    paths:
+      - backend/build/libs/
