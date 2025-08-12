@@ -2,21 +2,25 @@ package com.example.backend.controller;
 
 import com.example.backend.dto.LoginRequest;
 import com.example.backend.util.JwtUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
+@Tag(name = "사용자 관리", description = "사용자 CRUD API")
 public class LoginController {
 
     @Autowired
     private JwtUtil jwtUtil;
 
     @PostMapping("/login")
+    @Operation(summary = "사용자 인증", description = "로그인 인증한다.kch")
     public ResponseEntity<Map<String, Object>> login(@RequestBody LoginRequest loginRequest) {
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
