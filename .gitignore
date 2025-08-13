@@ -2,10 +2,7 @@
 /build/
 /dist/
 /frontend/node_modules/
-/frontend/.next/
-/backend/build/
 /backend/gradle-temp/
-/backend/.gradle/
 /backend/gradle-8.7/
 /backend/new-backend.zip
 /backend/gradle-8.7-bin.zip
