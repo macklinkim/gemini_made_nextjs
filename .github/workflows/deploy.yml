@@ -12,6 +12,9 @@ env:
 jobs:
   build-frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -23,14 +26,9 @@ jobs:
         cache: 'npm'
         cache-dependency-path: frontend/package-lock.json
     
-    - name: Install dependencies
+    - name: Install and Build Next.js
       run: |
-        cd frontend
         npm install
-    
-    - name: Build Next.js
-      run: |
-        cd frontend
         npm run build
     
     - name: Upload frontend artifacts
@@ -80,7 +78,6 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: frontend-build
-        path: frontend/
     
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
@@ -91,7 +88,11 @@ jobs:
     
     - name: Deploy to S3
       run: |
-        aws s3 sync ./ s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        # Note: Your Next.js app does not seem to be a static site.
+        # Deploying to S3 is for static files. You might need a different deployment strategy
+        # like AWS Amplify, Vercel, or a Node.js server environment.
+        # This command syncs the build output, but it may not work as a standalone site.
+        aws s3 sync ./frontend/.next s3://${{ secrets.S3_BUCKET_NAME }} --delete
     
     - name: Invalidate CloudFront
       run: |
@@ -121,7 +122,7 @@ jobs:
       uses: einaregilsson/beanstalk-deploy@v21
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
         application_name: ${{ secrets.EB_APPLICATION_NAME }}
         environment_name: ${{ secrets.EB_ENVIRONMENT_NAME }}
         region: ${{ env.AWS_REGION }}
