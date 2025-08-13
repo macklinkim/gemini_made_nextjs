@@ -28,10 +28,7 @@ jobs:
     
     - name: Install dependencies
       run: |
-        npm install
-    
-    - name: Build Next.js
-      run: |
+        npm ci
         npm run build
 
     - name: 디렉토리 구조 확인
@@ -45,8 +42,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: frontend-build
-        path: .next/
-        working-directory: ./frontend
+        path: frontend/.next/
 
   build-backend:
     runs-on: ubuntu-latest
