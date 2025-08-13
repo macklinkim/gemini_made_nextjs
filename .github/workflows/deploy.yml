@@ -30,14 +30,7 @@ jobs:
       run: |
         npm install
         npm run build
-    - name: 디렉토리 구조 확인
-      run: |
-        echo "=== 루트 디렉토리 ==="
-        ls -la
-        echo "=== frontend 디렉토리 ==="
-        ls -la frontend/
-        echo "=== .next 폴더 확인 ==="
-        ls -la frontend/.next/ || echo ".next 폴더 없음"
+
     - name: Upload frontend artifacts
       uses: actions/upload-artifact@v4
       with:
