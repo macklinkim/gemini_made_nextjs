@@ -43,6 +43,7 @@ jobs:
       with:
         name: frontend-build
         path: ./.next/
+        working-directory: .
 
   build-backend:
     runs-on: ubuntu-latest
