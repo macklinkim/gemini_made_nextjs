@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: .
+        working-directory: ./frontend
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -46,6 +46,7 @@ jobs:
       with:
         name: frontend-build
         path: .next/
+        working-directory: ./frontend
 
   build-backend:
     runs-on: ubuntu-latest
