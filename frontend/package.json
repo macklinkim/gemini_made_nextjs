@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "npx next dev",
-    "build": "npx next build && npx next export",
-    "start": "npx next start",
+    "build": "next build",
+    "start": "next start",
     "lint": "npx next lint",
     "gen-api": "openapi-generator-cli generate -i http://localhost:8080/v3/api-docs -g typescript-axios -o ./src/api"
   },
