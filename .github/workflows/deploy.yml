@@ -33,20 +33,20 @@ jobs:
     - name: Build Next.js
       run: |
         npm run build
-      working-directory: ./frontend
+      working-directory: ./next
 
     - name: 디렉토리 구조 확인
       run: |
         echo "=== 루트 디렉토리 ==="
         ls -la
-        echo "=== 루트 디렉토리 ==="
+        echo "=== .next 디렉토리 ==="
         ls -la .next/
         
     - name: Upload frontend artifacts
       uses: actions/upload-artifact@v4
       with:
         name: frontend-build
-        path: /frontend/.next/
+        path: .next/
         working-directory: .
 
   build-backend:
