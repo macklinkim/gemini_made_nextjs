@@ -29,7 +29,7 @@ public class LoginController {
 
         // 간단한 인증 로직
         if (("test@example.com".equals(username) && "password123".equals(password)) ||
-                ("user@test.com".equals(username) && "mypassword".equals(password))) {
+                ("user@test.com".equals(username) && "password".equals(password))) {
 
             // JWT 토큰 생성
             String token = jwtUtil.generateToken(username);
