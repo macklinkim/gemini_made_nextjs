@@ -81,7 +81,13 @@ jobs:
         with:
           name: frontend-build
           path: .next/
-
+      - name: Debug secrets
+        run: |
+          echo "Access Key exists: ${{ secrets.AWS_ACCESS_KEY_ID != '' }}"
+          echo "Secret Key exists: ${{ secrets.AWS_SECRET_ACCESS_KEY != '' }}"
+          echo "S3 Bucket exists: ${{ secrets.S3_BUCKET_NAME != '' }}"
+          echo "CloudFront ID exists: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}"
+          
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
