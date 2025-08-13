@@ -35,6 +35,9 @@ jobs:
       run: |
         echo "=== 루트 디렉토리 ==="
         ls -la
+        echo "=== 루트 디렉토리 ==="
+        ls -la .next/
+        ls -R .next/
         
     - name: Upload frontend artifacts
       uses: actions/upload-artifact@v4
