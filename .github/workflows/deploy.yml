@@ -37,7 +37,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: frontend-build
-        path: frontend/.next/
+        path: frontend/out/
 
   build-backend:
     runs-on: ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: frontend-build
-        path: .next/
+        path: frontend/
     
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
@@ -91,8 +91,7 @@ jobs:
     
     - name: Deploy to S3
       run: |
-        aws s3 sync .next/static/ s3://${{ secrets.S3_BUCKET_NAME }}/static/ --delete
-        aws s3 sync .next/ s3://${{ secrets.S3_BUCKET_NAME }}/ --exclude "static/*" --delete
+        aws s3 sync ./ s3://${{ secrets.S3_BUCKET_NAME }} --delete
     
     - name: Invalidate CloudFront
       run: |
