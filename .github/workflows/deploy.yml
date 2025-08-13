@@ -125,6 +125,7 @@ jobs:
     - name: Deploy to Elastic Beanstalk
       uses: einaregilsson/beanstalk-deploy@v21
       with:
+        existing_bucket_name: ${{ secrets.S3_BUCKET_NAME }}
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # ← 여기 수정됨!
         application_name: ${{ secrets.EB_APPLICATION_NAME }}
