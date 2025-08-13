@@ -28,15 +28,13 @@ jobs:
     
     - name: Install dependencies
       run: |
-        cd frontend
         npm install
     
     - name: Build Next.js
       run: |
-        cd frontend
         npm run build
       working-directory: ./frontend
-      
+
     - name: 디렉토리 구조 확인
       run: |
         echo "=== 루트 디렉토리 ==="
