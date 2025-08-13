@@ -33,7 +33,7 @@ jobs:
     - name: Build Next.js
       run: |
         npm run build
-      working-directory: ./next
+      working-directory: ./.next
 
     - name: 디렉토리 구조 확인
       run: |
