@@ -8,7 +8,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
 @EnableScheduling
-@OpenAPIDefinition(info = @Info(title = "스프링 부트 KCH API Documentation", version = "1.1", description = "TEST Swagger API 자동 문서화"))
+@OpenAPIDefinition(info = @Info(title = "스프링 부트 KCH API Documentation", version = "1.1", description = "Swagger API 자동 문서화"))
 public class BackendApplication {
 
 
