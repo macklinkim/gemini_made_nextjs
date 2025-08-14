@@ -3,7 +3,7 @@
 Spring Boot 백엔드와 Next.js 프론트엔드 통합을 학습하고 실습하기 위한 프로젝트다.
 자동 빌드, 테스트, 배포를 위한 CI/CD 파이프라인 설정도 포함한다.
 
-## 🚀 기술 스택
+## 기술 스택
 
 ### Backend (Spring Boot)
 
@@ -26,7 +26,7 @@ Spring Boot 백엔드와 Next.js 프론트엔드 통합을 학습하고 실습�
 * **GitLab CI**
 * **GitHub Actions**
 
-## 📂 프로젝트 구조
+## 프로젝트 구조
 
 이 프로젝트는 `backend`와 `frontend` 두 부분으로 구성된다.
 
@@ -62,7 +62,7 @@ Spring Boot 백엔드와 Next.js 프론트엔드 통합을 학습하고 실습�
 └── .gitlab-ci.yml   # GitLab CI 설정
 ```
 
-## ✨ 백엔드 기능
+## 백엔드 기능
 
 Spring Boot 기반 백엔드에서 제공하는 주요 기능은 다음과 같다.
 
@@ -89,7 +89,7 @@ Spring Boot 기반 백엔드에서 제공하는 주요 기능은 다음과 같�
 
   * `ScheduledTasks.java` – 예약 실행 작업 예제 포함
 
-## 🏁 시작하기
+##  시작하기
 
 ### 사전 준비
 
@@ -137,7 +137,7 @@ Spring Boot 기반 백엔드에서 제공하는 주요 기능은 다음과 같�
 
 프론트엔드는 `http://localhost:3000`에서 실행된다.
 
-## ⚙️ CI/CD
+##  CI/CD
 
 이 프로젝트는 GitLab과 GitHub 모두에서 CI/CD 파이프라인을 사용하도록 설정되어 있다.
 
@@ -161,7 +161,7 @@ Spring Boot 기반 백엔드에서 제공하는 주요 기능은 다음과 같�
 
 This is a study project to learn and practice the integration of a Spring Boot backend with a Next.js frontend. The project also includes setting up CI/CD pipelines for automated building, testing, and deployment.
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 ### Backend (Spring Boot)
 
@@ -184,7 +184,7 @@ This is a study project to learn and practice the integration of a Spring Boot b
 *   **GitLab CI**
 *   **GitHub Actions**
 
-## 📂 Project Structure
+##  Project Structure
 
 The project is divided into two main parts: `backend` and `frontend`.
 
@@ -220,7 +220,7 @@ The project is divided into two main parts: `backend` and `frontend`.
 └── .gitlab-ci.yml   # GitLab CI configuration
 ```
 
-## ✨ Backend Features
+##  Backend Features
 
 The backend is a Spring Boot application with the following key features:
 
@@ -241,7 +241,7 @@ The backend is a Spring Boot application with the following key features:
 *   **Scheduled Tasks:**
     *   `ScheduledTasks.java`: Contains examples of scheduled tasks.
 
-## 🏁 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
