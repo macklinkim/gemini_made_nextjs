@@ -147,8 +147,13 @@ Spring Boot 기반 백엔드에서 제공하는 주요 기능은 다음과 같�
 
   * `ci-pipeline.yml` – 빌드 및 테스트용 CI 워크플로우
   * `deploy.yml` – 지속적 배포(CD) 워크플로우
+* 배포 완료 후 elasticBeanStalk, S3 연동에서 문제 발견시
+  권한 문제가 대부분, 아래 명령어 aws cli로 실행할것
+  * `aws s3api delete-public-access-block --bucket 내S3버킷이름`
+  * `aws s3 cp s3://[내S3버킷이름/ s3://내S3버킷이름/ --recursive --acl public-read`
 
 이 파이프라인은 소프트웨어 개발 생명주기를 자동화하고, 모든 변경 사항이 자동으로 테스트 및 배포되도록 구성되어 있다.
+* 빌드 자동화 실패, 성공 화면 예시
 <img width="1237" height="636" alt="cdci2" src="https://github.com/user-attachments/assets/7dbce010-282c-4ad1-a0b9-4cd2989bfdb3" />
 <img width="1262" height="564" alt="cdci1" src="https://github.com/user-attachments/assets/91c17dd6-53d8-42c2-8887-a16ab388fdf5" />
 
