@@ -149,6 +149,8 @@ Spring Boot 기반 백엔드에서 제공하는 주요 기능은 다음과 같�
   * `deploy.yml` – 지속적 배포(CD) 워크플로우
 
 이 파이프라인은 소프트웨어 개발 생명주기를 자동화하고, 모든 변경 사항이 자동으로 테스트 및 배포되도록 구성되어 있다.
+<img width="1237" height="636" alt="cdci2" src="https://github.com/user-attachments/assets/7dbce010-282c-4ad1-a0b9-4cd2989bfdb3" />
+<img width="1262" height="564" alt="cdci1" src="https://github.com/user-attachments/assets/91c17dd6-53d8-42c2-8887-a16ab388fdf5" />
 
 
 ---
