@@ -1,11 +1,12 @@
 package com.example.backend.util;
 
 import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import javax.crypto.spec.SecretKeySpec;
+import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,10 +18,10 @@ public class JwtUtil {
     private static final String SECRET_KEY = "mySecretKeyForJWT2024SpringBootBackendApplication123456789";
     private static final int JWT_EXPIRATION = 86400000; // 24시간
 
-    private final SecretKeySpec key;
+    private final Key key;
 
     public JwtUtil() {
-        this.key = new SecretKeySpec(SECRET_KEY.getBytes(), SignatureAlgorithm.HS256.getJcaName());
+        this.key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
     }
 
     public String generateToken(String username) {
@@ -39,7 +40,7 @@ public class JwtUtil {
                 .setSubject(subject)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_EXPIRATION))
-                .signWith(SignatureAlgorithm.HS256, key)
+                .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
 
@@ -63,6 +64,7 @@ public class JwtUtil {
         try {
             return Jwts.parser()
                     .setSigningKey(key)
+                    .build()
                     .parseClaimsJws(token)
                     .getBody();
         } catch (ExpiredJwtException e) {

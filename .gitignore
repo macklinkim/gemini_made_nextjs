@@ -1,17 +1,19 @@
 # 빌드 결과물 무시
-/backend/build/
-/backend/.gradle/
 /dist/
 /frontend/node_modules/
-frontend/.next/
+/frontend/.next/
+/backend/build/
+/backend/.gradle/
+./backend/build/*.*
 /backend/gradle-temp/
 /backend/gradle-8.7/
 /backend/new-backend.zip
 /backend/gradle-8.7-bin.zip
 /backend.zip
-/backend/.gradle/
+
 # 로그 파일 무시
 *.log
+*.class
 
 # OS 또는 IDE 관련 파일 무시
 .DS_Store
