@@ -4,7 +4,7 @@
 /frontend/.next/
 /backend/build/
 /backend/.gradle/
-./backend/build/*.*
+
 /backend/gradle-temp/
 /backend/gradle-8.7/
 /backend/new-backend.zip
