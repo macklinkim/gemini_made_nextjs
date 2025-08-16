@@ -21,7 +21,7 @@ frontend-build:
 
 backend-build:
   stage: build
-  image: gradle:6.8.3-jdk18
+  image: gradle:8.5-jdk21
   before_script:
     - cd backend
   script:
